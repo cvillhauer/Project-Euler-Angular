@@ -27,4 +27,23 @@ export class Problem {
     {
         console.log("Solution not yet implemented.");
     }
+
+    isPrime(input: number)
+    {
+        let result: boolean = false;
+        for(let divisor = 2; divisor <= input; divisor++)
+        {
+          if(input % divisor == 0)
+          {
+            result = false;
+            break;
+          }
+          else if(divisor >= (Math.sqrt(input)))
+          {
+            result = true;
+            break;
+          }
+        }
+        return result;
+    }
 }
