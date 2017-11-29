@@ -2,12 +2,13 @@
   <h1>
     Courtney's Project Euler
   </h1>
+  <img style="float: right; margin-left: 25px;" src="https://projecteuler.net/profile/cvillhauer.png" alt="Project Euler profile image." />
   <p>My goal for this project is to solve as many of the problems from <a href="https://projecteuler.net">Project Euler</a> as I can, while focusing on clean and efficient code. 
     I also plan to spruce up the UI as I go, and to allow for at least one user-changeable variable per problem (called n in my code and notes). 
     For example, the standard "n" for Problem 1 is 1000, but I want my solution to work no matter what the arbitrary upper limit is.
     Therefore, my solutions prioritize flexibility over efficiency in some cases.
   </p>
-  <div *ngFor="let problem of problems" title="{{ problem.notes }}">
+  <div class="problem" *ngFor="let problem of problems" title="{{ problem.notes }}">
     <h2>{{ problem.title }}</h2>
     <p>{{ problem.description }}</p>
     <p style="font-weight: bold;">{{ problem.result }}</p>
