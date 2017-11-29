@@ -15,6 +15,11 @@ export class Problem {
         this.duration = 0;
     }
 
+    solveProblem()
+    {
+        console.log("Solution not yet implemented.");
+    }
+
     solveProblemTimed(){
         var elapsedTime = 0;
         var startTime = new Date().getTime();
@@ -23,11 +28,6 @@ export class Problem {
         var start = performance.now();
         this.solveProblem();
         this.duration = (performance.now() - start);
-    }
-
-    solveProblem()
-    {
-        console.log("Solution not yet implemented.");
     }
 
     isPrime(input: number)
@@ -45,6 +45,19 @@ export class Problem {
             result = true;
             break;
           }
+        }
+        return result;
+    }
+
+    isPalindrome(input: number)
+    {
+        let result: boolean = true;
+        let stringInput: string = String(input);
+        for(let i: number = 0; i < stringInput.length; i++){
+            if(stringInput[i] != stringInput[stringInput.length - i - 1]){
+                result = false;
+                break;
+            }
         }
         return result;
     }
