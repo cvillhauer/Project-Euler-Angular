@@ -3,7 +3,7 @@
     Courtney's Project Euler
   </h1>
   <a href="https://projecteuler.net">https://projecteuler.net</a>
-  <div *ngFor="let problem of problems">
+  <div *ngFor="let problem of problems" title="{{ problem.notes }}">
     <h2>{{ problem.title }}</h2>
     <p>{{ problem.description }}</p>
     <p style="font-weight: bold;">{{ problem.result }}</p>

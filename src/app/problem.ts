@@ -2,12 +2,14 @@ export class Problem {
     id: number;
     title: string;
     description: string;
+    notes: string;
     result: number;
     duration: number;
 
     constructor (id: number, description: string){
         this.id = id;
         this.description = description;
+        this.notes = "";
         this.title = "Problem " + this.id;
         this.result = 0;
         this.duration = 0;

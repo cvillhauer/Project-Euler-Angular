@@ -24,6 +24,9 @@ export class AppComponent {
       }
       this.result = result; 
     };
+
+    problem1.notes += "Fairly straightforward! The most obvious 'brute force' solution is also probably the fastest. ";
+
     this.problems.push(problem1);
 
     //PROBLEM 2
@@ -44,6 +47,10 @@ export class AppComponent {
       }
       this.result = result;
     };
+
+    problem2.notes += "The only sticky point here is the leap-frogging with i, j, and k. ";
+    problem2.notes += "Handwriting out a diagram/flow chart of the logic helps me with stuff like this. ";
+
     this.problems.push(problem2);
 
     //PROBLEM 3
@@ -51,19 +58,34 @@ export class AppComponent {
     problem3.solveProblem = function(): void { 
       let n: number = 600851475143;
       let i: number = 2;
+      let j: number = n;
       let result: number = 0;
-      for(i = 2; i <= (Math.sqrt(n)); i++) //The largest possible factor of a number is the square root of the number.
+      for(i = 2; i <= j; i++)
       {
-        if(n % i == 0) //This is a factor
+        if(j % i == 0)
         {
-          if(this.isPrime(i))
+          //console.log(i); //Together, these "i" results will be the prime factorization of n
+          if(i > result)
           {
             result = i;
           }
+          j = j / i;
+          i = 2;
         }
       }
       this.result = result;
     };
+    
+    problem3.notes += "On this one, I stumbled onto a solution that yielded the correct answer right away. However, it did not always produce a correct answer, if you varied n. ";
+    problem3.notes += "I was cutting off the search for prime factors at the square root of n. 14 is a counter example - 7 is higher than the square root of 14 yet is its highest prime factor. ";
+    problem3.notes += "However, brute forcing by finding every factor between 2-n, then identifying the highest prime one, would be much too slow. ";
+    problem3.notes += "I needed to change the way I was thinking about this. Researching factorization on the internet helped me a lot. ";
+    problem3.notes += "Instead of counting each factor, deciding if it was prime, and then storing it, I should instead step through a prime factorization. ";
+    problem3.notes += "Find the smallest factor of n, and we know it is prime. Divide n by this prime and we have a new number to break down into primes (j). ";
+    problem3.notes += "Repeat this process until your new number itself is prime. Probably the last number you land on is always the highest prime? ";
+    problem3.notes += "There is probably room to increase efficiency here. Though it runs in less than 2 miliseconds, I'm going through the loop almost 10,000 times. ";
+    problem3.notes += "I'm going to leave this as it is for now, but a future Euler problem will probably get me to reuse this, and that might require more speed! ";
+
     this.problems.push(problem3);
 
 
@@ -85,6 +107,13 @@ export class AppComponent {
       }
       this.result = result; 
     };
+
+    problem7.notes += "This was actually my first Euler problem. First, I tried brute forcing by looping all the way through 2-n to see if a number n had any other factors. ";
+    problem7.notes += "This worked, but took way too long, especially if you do it 10,000 times. Then I realized that any factor that might exist on the lower end has a cooresponding factor on the higher end. ";
+    problem7.notes += "For example, if 1009 is not divisible by 2, it is also not divisible by ~500. So, I cut down my loop to 2-(n/2), which also worked and was much faster. ";
+    problem7.notes += "After more research on prime numbers, I learned that the square root of a number is the true 'halfway point' for possible lower-half factors. ";
+    problem7.notes += "For example, 49 is not a prime, but the only factor it has is 7, which is its square root. If we know there are no factors before 7, we know there are no factors after 7 because they would have to have a cooresponding lower factor.";
+
     this.problems.push(problem7);
   }
 }
