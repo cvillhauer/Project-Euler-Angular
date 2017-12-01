@@ -8,6 +8,7 @@ import { Problem4 } from '../../src/app/problems/problem4';
 import { Problem5 } from '../../src/app/problems/problem5';
 import { Problem6 } from '../../src/app/problems/problem6';
 import { Problem7 } from '../../src/app/problems/problem7';
+import { Problem8 } from '../../src/app/problems/problem8';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,6 @@ export class AppComponent {
   public problems: Problem[] = [];
 
   constructor() {
-
     //PROBLEM 1
     let problem1 = new Problem1(1, 1000);
     this.problems.push(problem1);
@@ -51,5 +51,9 @@ export class AppComponent {
     //PROBLEM 7
     let problem7 = new Problem7(7, 10001);
     this.problems.push(problem7);
+
+    //PROBLEM 8
+    let problem8 = new Problem8(8, 13);
+    this.problems.push(problem8);
   }
 }
