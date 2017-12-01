@@ -3,13 +3,15 @@ export class Problem {
     title: string;
     description: string;
     notes: string;
+    input: number;
     result: number;
     duration: number;
 
-    constructor (id: number, description: string){
+    constructor (id: number, description: string, input: number){
         this.id = id;
         this.description = description;
         this.notes = "";
+        this.input = input;
         this.title = "Problem " + this.id;
         this.result = 0;
         this.duration = 0;

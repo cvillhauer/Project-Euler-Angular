@@ -8,11 +8,18 @@
     For example, the standard "n" for Problem 1 is 1000, but I want my solution to work no matter what the arbitrary upper limit is.
     Therefore, my solutions prioritize flexibility over efficiency in some cases.
   </p>
-  <div class="problem" *ngFor="let problem of problems" title="{{ problem.notes }}">
-    <h2>{{ problem.title }}</h2>
-    <p>{{ problem.description }}</p>
-    <p style="font-weight: bold;">{{ problem.result }}</p>
-    <button type="button" class="btn btn-default" (click)="problem.solveProblemTimed()">Solve</button>
-    <p>{{ problem.duration | number:'1.0-0' }} miliseconds</p>
+  <div class="problems">
+      <div class="problem" *ngFor="let problem of problems" title="{{ problem.notes }}">
+          <h2>{{ problem.title }}</h2>
+          <p>{{ problem.description }}</p>
+          <div class="form-group row">
+            <div class="col-sm-2"><input class="form-control" [(ngModel)]="problem.input" /></div>
+            <div class="col-sm-2"><button type="button" class="btn btn-default" (click)="problem.solveProblemTimed()">Solve</button></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2" style="font-weight: bold; text-align: right">{{ problem.result }}</div>
+            <div class="col-sm-2">{{ problem.duration | number:'1.0-0' }} miliseconds</div>
+          </div>
+        </div>
   </div>
 </div>

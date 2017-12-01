@@ -4,9 +4,9 @@
 div .problem { margin: 10px; padding: 10px; border-radius: 10px; }
 
 /* https://color.adobe.com/create/color-wheel/?base=2&rule=Analogous&selected=4&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.9899665154438887,0.7422741711897083,1,0.91,0.7826155026361308,0.6892245144877269,1,0.9968197056236502,0.8333061981092108,0.7128086402793818,0.91,0.823727817774455,0.7187408014924501,0.741126135715604,1&swatchOrder=0,1,2,3,4 */
-div:nth-child(5n+0) { background-color: #FCBDFF; }
-div:nth-child(5n+1) { background-color: #E8C8B0; }
-div:nth-child(5n+2) { background-color: #FFFED4; }
-div:nth-child(5n+3) { background-color: #B6E8D2; }
-div:nth-child(5n+4) { background-color: #B7BDFF; }
-div:first-child { background-color: #FFFFFF; }
+.problem:nth-of-type(5n+0) { background-color: #FCBDFF; }
+.problem:nth-of-type(5n+1) { background-color: #E8C8B0; }
+.problem:nth-of-type(5n+2) { background-color: #FFFED4; }
+.problem:nth-of-type(5n+3) { background-color: #B6E8D2; }
+.problem:nth-of-type(5n+4) { background-color: #B7BDFF; }
+
