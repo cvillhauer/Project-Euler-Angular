@@ -9,6 +9,7 @@ import { Problem5 } from '../../src/app/problems/problem5';
 import { Problem6 } from '../../src/app/problems/problem6';
 import { Problem7 } from '../../src/app/problems/problem7';
 import { Problem8 } from '../../src/app/problems/problem8';
+import { Problem9 } from '../../src/app/problems/problem9';
 
 @Component({
   selector: 'app-root',
@@ -55,5 +56,9 @@ export class AppComponent {
     //PROBLEM 8
     let problem8 = new Problem8(8, 13);
     this.problems.push(problem8);
+
+    //PROBLEM 9
+    let problem9 = new Problem9(9, 1000);
+    this.problems.push(problem9);
   }
 }
